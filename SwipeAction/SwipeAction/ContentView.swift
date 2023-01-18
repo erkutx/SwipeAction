@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var nameList = ["Lebron","Jordan","Kobe","Kyre"]
+    @State private var nameList = ["Lebron","Jordan","Kobe","Kyrie"]
     
     
     
