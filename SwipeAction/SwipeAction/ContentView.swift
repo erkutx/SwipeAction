@@ -38,6 +38,7 @@ struct ContentView: View {
                                 // TODO MIC
                             } label: {
                                 Label("Mic", systemImage: "mic.fill")
+                                    //swipe left to display Mic
                             }
                             .tint(.green)
                         }
