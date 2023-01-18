@@ -8,20 +8,40 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var nameList = []
+    @State private var nameList = ["Lebron","Jordan","Kobe","Kyre"]
+    
+    
+    
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+            List {
+                ForEach(nameList,id: \.self) { name in
+                    Text(name)
+                        .padding()
+                        .swipeActions {
+                            Button(role: .destructive) {
+                                // TODO DELETE
+                            } label: {
+                                Label("Delete", systemImage: "trash.fill")
+                            }
+                        }
+                        .swipeActions {
+                            Button {
+                                // TODO EDIT
+                            } label: {
+                                Label("Edit", systemImage: "square.and.pencil")
+                            }
+                            .tint(.blue)
+                        }
+                }
+            }
+            
         }
-        .padding()
     }
-}
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
+    
+    struct ContentView_Previews: PreviewProvider {
+        static var previews: some View {
+            ContentView()
+        }
     }
 }
