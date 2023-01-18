@@ -33,6 +33,14 @@ struct ContentView: View {
                             }
                             .tint(.blue)
                         }
+                        .swipeActions(edge: .leading) {
+                            Button {
+                                // TODO MIC
+                            } label: {
+                                Label("Mic", systemImage: "mic.fill")
+                            }
+                            .tint(.green)
+                        }
                 }
             }
             
