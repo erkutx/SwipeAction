@@ -25,7 +25,7 @@ struct CardView: View {
                     .font(.largeTitle)
                     .foregroundColor(.white)
                     .bold()
-                Image(systemName: "heart.fill")
+                Image(systemName: "person.fill")
                     .foregroundColor(.red)
             }
             
