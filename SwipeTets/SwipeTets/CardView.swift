@@ -29,6 +29,31 @@ struct CardView: View {
                     .foregroundColor(.blue)
             }
         }
+        .offset(x: offSet.width, y: offSet.height*0.4)
+        .rotationEffect(.degrees(Double(offSet.width / 40)))
+        .gesture(
+            DragGesture()
+                .onChanged { gesture in
+                    offSet = gesture.translation
+                    
+                } .onEnded{ _ in
+                    withAnimation {
+                        swipeCard(width: offSet.width)
+                    }
+                }
+        )
+    }
+    func swipeCard(width: CGFloat) {
+        switch width {
+        case -500...(-150):
+            print("\(person) removed")
+            offset = CGSize(width: -5000, height: 0)
+        case 150...500:
+            print("\(person) added")
+            offset = CGSize(width: 500, height: 0)
+        default:
+            offSet = .zero
+        }
     }
 }
 
