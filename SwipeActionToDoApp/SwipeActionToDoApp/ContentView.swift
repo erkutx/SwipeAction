@@ -46,6 +46,14 @@ struct ContentView: View {
                         }
                         .tint(.red)
                     }
+                    .swipeActions(edge: .leading) {
+                        Button(action: {
+                            print("do something")
+                        }) {
+                            Image(systemName: "gear")
+                        }
+                        .tint(.purple)
+                    }
                 }
                 .navigationTitle("To Do List")
             }
