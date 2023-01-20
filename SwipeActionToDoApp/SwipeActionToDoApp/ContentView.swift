@@ -13,23 +13,40 @@ struct ContentView: View {
         "Finish The CODE",
         "GO SHOPPING",
         "WATCH THE GAME",
-        "Do laundry"
+        "Do laundry",
+        "Get Milk",
+        "Do Homework"
         
     ]
     var body: some View {
         NavigationView {
             List {
                 ForEach(items, id:\.self) { item in
-                    Text(item)
+                    HStack{
+                        Image(systemName: "checkmark.circle.fill")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 30, height: 30)
+                            .foregroundColor(.blue)
+                        Text(item)
+                    }
+                    .swipeActions {
+                        Button(action: {
+                            print("do something")
+                        }) {
+                            Image(systemName: "bell")
+                        }
+                        .tint(.yellow)
+                    }
                 }
+                .navigationTitle("To Do List")
             }
-            .navigationTitle("To Do List")
         }
     }
-}
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
+    
+    struct ContentView_Previews: PreviewProvider {
+        static var previews: some View {
+            ContentView()
+        }
     }
 }
