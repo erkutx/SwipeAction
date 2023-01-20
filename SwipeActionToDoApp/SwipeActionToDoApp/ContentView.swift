@@ -26,7 +26,7 @@ struct ContentView: View {
                         Image(systemName: "checkmark.circle.fill")
                             .resizable()
                             .scaledToFit()
-                            .frame(width: 30, height: 30)
+                            .frame(width: 25, height: 23)
                             .foregroundColor(.blue)
                         Text(item)
                     }
