@@ -38,6 +38,14 @@ struct ContentView: View {
                         }
                         .tint(.yellow)
                     }
+                    .swipeActions {
+                        Button(action: {
+                            print("do something")
+                        }) {
+                            Image(systemName: "trash")
+                        }
+                        .tint(.red)
+                    }
                 }
                 .navigationTitle("To Do List")
             }
